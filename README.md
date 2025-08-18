@@ -33,7 +33,7 @@ struct Demo: View {
 
     var body: some View {
         VStack(spacing: 40) {
-            ProgressIndicator(
+            DelayableIndicator(
                 isLoading,
                 delay: 0.5,
                 transition: .scale.combined(with: .opacity)
