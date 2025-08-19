@@ -33,7 +33,11 @@ public struct DelayableIndicator<Content: View>: View {
             
             if newValue {
                 pendingTask = Task {
-                    try? await Task.sleep(nanoseconds: UInt64(delay * 1_000_000_000))
+                    if #available(iOS 16.0, *) {
+                        try? await Task.sleep(for: .seconds(delay))
+                    } else {
+                        try? await Task.sleep(nanoseconds: UInt64(delay * 1_000_000_000))
+                    }
                     guard !Task.isCancelled else { return }
                     withAnimation {
                         isPresented = true
