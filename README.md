@@ -72,4 +72,3 @@ In addition to using the `DelayableIndicator` view directly, you can also apply 
 ```
 
 This offers a more concise syntax when you want to delay the appearance of an existing View.
-```
