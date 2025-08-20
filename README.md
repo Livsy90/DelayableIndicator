@@ -56,3 +56,20 @@ struct Demo: View {
 When the `isIndicating` flag switches to `true`, the component starts an async task that waits for the specified delay. If the flag is still `true` after the delay, the content is displayed with animation. If `isIndicating` becomes `false` before the delay finishes, the pending task is cancelled and the content is never shown.
 
 This pattern removes short-lived flashes of UI and improves perceived responsiveness.
+
+## View Extension (Alternative API)
+
+In addition to using the `DelayableIndicator` view directly, you can also apply it as a modifier through the provided `delayablePresentation` extension:
+
+```swift
+.someView()
+    .delayablePresentation(
+        isPresented: isLoading,
+        delay: 0.5,
+        transition: .opacity,
+        skipFirstPresentation: true
+    )
+```
+
+This offers a more concise syntax when you want to delay the appearance of an existing View.
+```
