@@ -62,7 +62,7 @@ This pattern removes short-lived flashes of UI and improves perceived responsive
 In addition to using the `DelayableIndicator` view directly, you can also apply it as a modifier through the provided `delayablePresentation` extension:
 
 ```swift
-.someView()
+Text("Some text")
     .delayablePresentation(
         isPresented: isLoading,
         delay: 0.5,
@@ -70,5 +70,3 @@ In addition to using the `DelayableIndicator` view directly, you can also apply 
         skipFirstPresentation: true
     )
 ```
-
-This offers a more concise syntax when you want to delay the appearance of an existing View.
