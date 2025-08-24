@@ -1,7 +1,7 @@
 import SwiftUI
 
 @available(iOS 15.0, *)
-extension View {
+public extension View {
     func delayablePresentation(
         isPresented: Bool,
         delay: TimeInterval = 4,
